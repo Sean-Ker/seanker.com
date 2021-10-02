@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "netlify-lambda build express",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sean-Ker/seanker.com.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Sean Kernitsman",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Sean-Ker/seanker.com/issues"
   },
