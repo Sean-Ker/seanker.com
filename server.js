@@ -7,6 +7,8 @@ app.use(express.static(__dirname + "/public"));
 
 const resume_filepath = "./public/assets/Sean Kernitsman Resume.pdf";
 
+port = process.env.PORT || 3000;
+
 app.get("/home", (req, res) => {
     res.redirect("/");
 });
@@ -45,4 +47,4 @@ app.use(function (err, req, res, next) {
     }
 });
 
-app.listen(3000);
+app.listen(port);
