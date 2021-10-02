@@ -5,23 +5,30 @@
   "main": "index.js",
   "scripts": {
     "devStart": "nodemon server.js",
-    "build": "netlify-lambda build express",
-    "start": "node server.js"
+<<<<<<< HEAD
+    "build": "./node_modules/.bin/netlify-lambda build src",
+    "start": "./node_modules/.bin/netlify-lambda serve src"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> parent of 40a378b (commit)
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sean-Ker/seanker.com.git"
   },
   "keywords": [],
-  "author": "Sean Kernitsman",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Sean-Ker/seanker.com/issues"
   },
   "homepage": "https://github.com/Sean-Ker/seanker.com#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "netlify-lambda": "^2.0.14",
+    "serverless": "^2.60.3",
+    "serverless-http": "^2.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
