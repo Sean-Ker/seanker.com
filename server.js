@@ -1,13 +1,18 @@
 const express = require("express");
 const fs = require("fs");
+var path = require("path");
+var favicon = require("serve-favicon");
 const app = express();
 
+const public = path.join(__dirname, "/public");
+const resume_filepath = path.join(public, "assets", "Sean Kernitsman Resume.pdf");
+const port = process.env.PORT || 3000;
+
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.set("views", public);
 
-const resume_filepath = "./public/assets/Sean Kernitsman Resume.pdf";
-
-port = process.env.PORT || 3000;
+app.use(favicon(path.join(public, "assets", "favico.ico")));
+app.use(express.static(public));
 
 app.get("/home", (req, res) => {
     res.redirect("/");
