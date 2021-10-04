@@ -5,6 +5,8 @@ var randomAngle = 0;
 var c;
 var canvas;
 
+var forex_mode = false;
+
 const fontSize = 15;
 const maxParticles = 2000;
 const particlesPerClick = 1200;
@@ -88,7 +90,6 @@ class Branch {
             line(this.prevx, this.prevy, this.x, this.y);
         } else {
             noStroke();
-
             text(this.currency, this.x, this.y);
         }
 
@@ -96,10 +97,8 @@ class Branch {
     }
 
     moveNoise() {
-        this.speed.x +=
-            simplex.simplex3(this.x * accScl, this.y * accScl, millis() * timeScl) * scl;
-        this.speed.y +=
-            simplex.simplex3(this.y * accScl, this.x * accScl, millis() * timeScl) * scl;
+        this.speed.x += simplex.simplex3(this.x * accScl, this.y * accScl, millis() * timeScl) * scl;
+        this.speed.y += simplex.simplex3(this.y * accScl, this.x * accScl, millis() * timeScl) * scl;
         // this.speed.x +=
         this.x += this.speed.x;
         this.y += this.speed.y;
@@ -137,7 +136,7 @@ function setup() {
     blendMode(SCREEN);
     strokeWeight(0.6);
 
-    createBranches(particlesPerClick, width / 2, height / 2);
+    createBranches(particlesPerClick, width / 2, height / 2, (drawLine = !forex_mode));
 
     //createBranches(2000,0,0);
     //noStroke();
@@ -159,7 +158,7 @@ function draw() {
 
     //clear();
     if (mouseIsPressed) {
-        createBranches(particlesPerHold, mouseX, mouseY);
+        createBranches(particlesPerHold, mouseX, mouseY, !forex_mode);
     }
 
     branches.forEach((branch) => {
@@ -182,13 +181,21 @@ function keyPressed() {
         branches = [];
         currentIndex = 0;
     }
+    if (keyCode == 13) {
+        clear();
+        branches = [];
+        currentIndex = 0;
+        forex_mode = !forex_mode;
+        createBranches(particlesPerClick, width / 2, height / 2, (drawLine = !forex_mode));
+    }
+    // console.log(keyCode);
 }
 
 function mousePressed() {
     clear();
     branches = [];
     currentIndex = 0;
-    createBranches(particlesPerClick, mouseX, mouseY);
+    createBranches(particlesPerClick, mouseX, mouseY, (drawLine = !forex_mode));
     //background(255,0,0)
 
     //   colorMode(HSB);
@@ -200,7 +207,7 @@ function windowResized() {
     clear();
     branches = [];
     currentIndex = 0;
-    createBranches(particlesPerClick, width / 2, height / 2);
+    createBranches(particlesPerClick, width / 2, height / 2, !forex_mode);
 }
 
 $(window).on("orientationchange", function (event) {
