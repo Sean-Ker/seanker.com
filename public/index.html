@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+            integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+            integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <script type="text/javascript" src="./js/perlin.js"></script>
+        <script type="text/javascript" src="./js/sketch.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
+        <title>Sean Kerntisman</title>
+    </head>
+
+    <body onorientationchange="windowResized">
+        <!--  -->
+        <div id="hero-section" style="height: 100%; width: 100%; position: relative; display: block">
+            <div id="home"></div>
+            <div id="hero-canvas" style="user-select: none"></div>
+
+            <!--~~~ Navbar ~~~-->
+            <nav
+                class="navbar navbar-expand-md fixed-top navbar-light bg-light"
+                style="
+                    background-color: rgba(255, 255, 255, 0.8) !important;
+                    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+                "
+            >
+                <div class="container">
+                    <!-- Logo -->
+                    <a href="#home" class="navbar-brand">
+                        <img src="./assets/logo.svg" height="50px" alt="Logo" style="vertical-align: bottom" />
+
+                        <span id="brand-text"> S.K.</span>
+                    </a>
+                    <!-- Logo End -->
+
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbar-toggle"
+                        aria-controls="navbar-toggle"
+                        navbar-toggle
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="fa fa-bars"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse d-md-flex justify-content-md-between" id="navbar-toggle">
+                        <div id="header-nav" class="navbar-nav">
+                            <a class="nav-link smooth-scroll active" href="#home">Home</a>
+                            <a class="nav-link smooth-scroll" href="#about">About</a>
+                            <a class="nav-link smooth-scroll" href="#skills">Skills</a>
+                            <a class="nav-link smooth-scroll" href="#skills">Projects</a>
+                            <a class="nav-link smooth-scroll" href="#contact">Contact</a>
+                        </div>
+                        <a class="my-btn-outline" target="_blank" href="/resume">Resume </a>
+                        <!-- <div class="align-items-end text-end d-flex"></div> -->
+                    </div>
+                </div>
+            </nav>
+
+            <!--~~~ Navbar End~~~-->
+
+            <div class="card p-2">
+                <h3 class="mb-0 text-secondary">Hello!</h3>
+                <p class="fw-600 mb-2 mb-md-2 mt-2" style="font-family: Poppins; font-size: 3rem; line-height: 1.1em">
+                    I'm Sean Kernitsman.
+                </p>
+                <p class="text-5 mb-4">based in Waterloo, Canada.</p>
+
+                <div class="d-flex justify-content-around">
+                    <a href="#about" class="btn btn-lg btn-primary btn-block rounded-pill smooth-scroll mt-2 text-white"
+                        >About Me</a
+                    >
+                    <a
+                        href="#contact"
+                        class="btn btn-lg btn-primary btn-block rounded-pill smooth-scroll mt-2 text-white"
+                        >Contact Me</a
+                    >
+                </div>
+            </div>
+
+            <div id="transition-block"></div>
+            <div class="icon-scroll"></div>
+        </div>
+
+        <div id="about">
+            <div class="container pt-5">
+                <h2 style="color: aliceblue">More Content!</h2>
+                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br />
+            </div>
+        </div>
+    </body>
+</html>
