@@ -18,6 +18,9 @@
             integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
             crossorigin="anonymous"
         ></script>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
         <link
             rel="stylesheet"
@@ -108,17 +111,69 @@
         </div>
 
         <div id="about">
-            <div class="container pt-5">
-                <h2 style="color: aliceblue">More Content!</h2>
-                <br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br />
-                <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br />
+            <div class="container">
+                <h1 class="mb-3" style="color: white">About Me</h1>
+
+                <div id="about_card" class="row p-2 mx-1 d-flex align-items-center g-xl-3">
+                    <div class="col-xl-6 mb-3 mb-xl-0">
+                        <img src="./assets/profile.svg" alt="Discord status profile" />
+                    </div>
+                    <div class="col-xl-6" style="color: rgb(230, 230, 230)">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero doloremque eveniet iste totam ex
+                        sed, fuga ut explicabo minima? Error porro voluptate minima quaerat rerum at architecto
+                        voluptatibus sunt placeat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                        doloremque eveniet iste totam ex sed, fuga ut explicabo minima? Error porro voluptate minima
+                        quaerat rerum at architecto voluptatibus sunt placeat?
+                    </div>
+                </div>
+                <br /><br /><br /><br /><br />
             </div>
         </div>
+        <div id="transition-block-out"></div>
+        <div id="skills">
+            <br /><br /><br /><br /><br /><br /><br />
+            <!--
+            <div
+                class="d-flex align-items-center justify-content-center"
+                data-relative-input="true"
+                id="scene"
+                style="position: relative"
+            >
+                <img
+                    width="90%"
+                    data-depth="0.6"
+                    src="./assets/skills_skeleton.svg"
+                    alt="Skills bee hive skeleton"
+                    style="position: relative"
+                />
+                <img
+                    width="90%"
+                    data-depth="0.5"
+                    src="./assets/skills_icons.svg"
+                    alt="Skills bee hive icons"
+                    style="position: absolute; left: 7%; top: 10%"
+                />
+            </div> -->
+
+            <div class="container">
+                <h1>My Skills</h1>
+                <br /><br /><br />
+                <div class="d-flex align-items-center justify-content-center">
+                    <img
+                        id="skills_hive"
+                        data-tilt
+                        width="100%"
+                        src="./assets/skills.svg"
+                        alt="Skills bee hive icons"
+                        class="js-tilt p-2"
+                    />
+                </div>
+            </div>
+            <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
     </body>
 </html>

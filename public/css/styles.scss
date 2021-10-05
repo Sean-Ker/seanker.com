@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 $clr-primary-light: hsl(13, 71%, 66%);
 $clr-primary: hsl(13, 79%, 55%); // hsl(202, 75%, 44%)
@@ -11,8 +12,7 @@ $clr-primary-dark: hsl(13, 74%, 42%);
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-        "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Open Sans", "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -34,7 +34,7 @@ code {
 
 html,
 body {
-    font-family: Roboto !important;
+    // font-family: Roboto !important;
     // background: white;
     width: 100%;
     height: 100%;
@@ -113,8 +113,8 @@ nav {
     top: 25%;
     left: 10%;
     @media (max-width: 768px) {
-        width: 90%;
-        left: 5%;
+        width: 80%;
+        left: 10%;
     }
     @media (max-width: 568px) {
         width: 100%;
@@ -126,17 +126,36 @@ nav {
     background: white;
 }
 
+#about_card {
+    background-color: $clr-primary-dark;
+    // border: 2px solid coral;
+    border-radius: 10px;
+}
+
 #transition-block {
     display: block;
     position: absolute;
     bottom: -1px;
     width: 100%;
-    height: 2%;
+    height: 1%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $clr-primary 100%);
+}
+
+#transition-block-out {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(180deg, $clr-primary 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 #about {
     background: $clr-primary;
+}
+
+@media (min-width: 768px) {
+    #skills_hive {
+        width: 66%;
+    }
 }
 
 //## Scroll Bar ##//
