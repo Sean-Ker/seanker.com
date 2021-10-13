@@ -1,0 +1,40 @@
+#hero-section {
+    background: white;
+}
+
+#about_card {
+    background-color: $orange-dark;
+    // border: 2px solid coral;
+    border-radius: 10px;
+}
+
+#transition-block {
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 1%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $orange 100%);
+}
+
+#transition-block-out {
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(180deg, $orange 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+#about {
+    background: $orange;
+    height: 100vh;
+}
+
+#skills_hive {
+    @media (min-width: 768px) {
+        width: 66%;
+    }
+
+    // #techs {
+    //     transform: translateZ(200px);
+    // }
+}

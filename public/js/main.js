@@ -7,22 +7,16 @@ $(function () {
         $(this).addClass("active");
     });
 
-    // var scene = document.getElementById("scene");
-    // var parallaxInstance = new Parallax(scene);
-
-    // const img = document.getElementById("skills_hive");
-    // console.log(img);
-    // new simpleParallax(img, {
-    //     orientation: "right",
-    // });
-
-    console.log("here");
-    $(".js-tilt").tilt({
-        scale: 1.2,
-        glare: true,
-        maxGlare: 0.5,
-        // axis: "x",
+    let width = $(window).width();
+    // if (width > 768) {
+    var scene = document.getElementById("skills_hive");
+    var parallaxInstance = new Parallax(scene, {
+        relativeInput: false,
+        hoverOnly: false,
+        frictionX: 0.1,
+        frictionY: 0.1,
     });
+    // }
 
     var thehash = e.target.hash;
     $(thehash).prop("id", thehash.substr(1) + "-noscroll");
@@ -30,8 +24,8 @@ $(function () {
     $(thehash + "-noscroll").prop("id", thehash.substr(1));
 });
 
-$(window).scroll(function (event) {
-    debugger;
-    var scroll = $(window).scrollTop();
-    console.log("scrol val: ", scroll);
-});
+// $(window).scroll(function (event) {
+//     debugger;
+//     var scroll = $(window).scrollTop();
+//     console.log("scrol val: ", scroll);
+// });

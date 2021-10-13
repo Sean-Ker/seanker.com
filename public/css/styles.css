@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-:root {
-  -ms-touch-action: pan-x pan-y;
-      touch-action: pan-x pan-y;
-  height: 100%;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Open Sans", "Roboto", sans-serif;
@@ -93,6 +87,12 @@ nav .my-btn-outline:not(:hover) {
   }
 }
 
+canvas {
+  display: block;
+  position: absolute !important;
+  cursor: pointer;
+}
+
 .card {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 1em;
@@ -114,43 +114,6 @@ nav .my-btn-outline:not(:hover) {
   .card {
     width: 100%;
     left: 0%;
-  }
-}
-
-#hero-section {
-  background: white;
-}
-
-#about_card {
-  background-color: #ba3e1c;
-  border-radius: 10px;
-}
-
-#transition-block {
-  display: block;
-  position: absolute;
-  bottom: -1px;
-  width: 100%;
-  height: 1%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#e75932));
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #e75932 100%);
-}
-
-#transition-block-out {
-  display: block;
-  width: 100%;
-  height: 10px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e75932), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(180deg, #e75932 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-#about {
-  background: #e75932;
-}
-
-@media (min-width: 768px) {
-  #skills_hive {
-    width: 66%;
   }
 }
 
@@ -228,11 +191,6 @@ nav .my-btn-outline:not(:hover) {
   }
 }
 
-canvas {
-  position: absolute !important;
-  cursor: pointer;
-}
-
 .my-btn-outline {
   color: #e75932;
   border-radius: 5px;
@@ -267,5 +225,43 @@ canvas {
 .my-btn-outline-dark:hover {
   background-color: #ba3e1c;
   color: white;
+}
+
+#hero-section {
+  background: white;
+}
+
+#about_card {
+  background-color: #ba3e1c;
+  border-radius: 10px;
+}
+
+#transition-block {
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 1%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#e75932));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #e75932 100%);
+}
+
+#transition-block-out {
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e75932), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(180deg, #e75932 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+#about {
+  background: #e75932;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  #skills_hive {
+    width: 66%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
