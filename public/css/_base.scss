@@ -1,6 +1,7 @@
 $orange-light: hsl(13, 71%, 66%);
-$orange: hsl(13, 79%, 55%); // hsl(202, 75%, 44%)
+$orange: #e75932; // hsl(202, 75%, 44%)
 $orange-dark: hsl(13, 74%, 42%);
+$box-shadow: rgba($orange, 0.57);
 
 body {
     margin: 0;
@@ -13,28 +14,29 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.btn-primary,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-    background-color: $orange;
-    border-color: $orange-dark;
-}
-.btn-primary:hover {
-    background-color: $orange-dark;
-}
+// .btn-primary,
+// .btn-primary:active,
+// .btn-primary:visited,
+// .btn-primary:focus {
+//     background-color: $orange;
+//     border: none;
+// }
+// .btn-primary:hover {
+//     background-color: $orange-dark;
+// }
 
 html,
 body {
     // font-family: Roboto !important;
     // background: white;
     width: 100%;
-    height: 100%;
-    margin: 0;
-    max-width: 100%;
-    scroll-behavior: smooth;
+    // height: 100%; // Breaks scrolling!!!!
+    // margin: 0px;
+    // max-width: 100%;
+    // scroll-behavior: smooth;
     overflow-x: hidden;
     // overflow-y: auto;
+    // -webkit-overflow-scrolling: touch;
 }
 
 button {
@@ -53,6 +55,6 @@ button {
     color: $orange-dark;
 }
 
-p {
-    color: $orange-dark;
-}
+// p {
+//     color: $orange-dark;
+// }

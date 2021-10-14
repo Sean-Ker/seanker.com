@@ -124,7 +124,7 @@ function setup() {
     simplex.seed(random());
     clear();
 
-    let parent = $("#hero-section")[0];
+    let parent = $("#home")[0];
     // console.log(parent.offsetWidth, parent.offsetHeight);
     canvas = createCanvas(windowWidth, parent.offsetHeight);
     canvas.parent("hero-canvas");

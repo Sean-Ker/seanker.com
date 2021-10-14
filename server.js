@@ -6,7 +6,6 @@ const app = express();
 
 const public = path.join(__dirname, "/public");
 const resume_filepath = path.join(public, "assets", "Sean Kernitsman Resume.pdf");
-const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.set("views", public);
@@ -22,6 +21,11 @@ app.get("/", (req, res) => {
     console.log("hello", __dirname);
     res.render("index");
 });
+
+// app.get("/robots.txt", (req, res) => {
+//     res.type("text/plain");
+//     res.sendFile(path.join(public, "robots.txt"));
+// });
 
 app.get("/resume.pdf", (req, res) => {
     res.download(resume_filepath);
@@ -52,4 +56,5 @@ app.use(function (err, req, res, next) {
     }
 });
 
+const port = process.env.PORT || 3000;
 app.listen(port);

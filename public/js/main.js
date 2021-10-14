@@ -1,5 +1,7 @@
-$(function () {
+$(function (e) {
     console.log("Init js.");
+
+    // $(document).on("scroll", onScroll);
 
     $("nav .nav-link").on("click", function (e) {
         // e.preventDefault();
@@ -17,15 +19,61 @@ $(function () {
         frictionY: 0.1,
     });
     // }
+    // onScroll(e);
 
-    var thehash = e.target.hash;
-    $(thehash).prop("id", thehash.substr(1) + "-noscroll");
-    window.location.hash = e.target.hash;
-    $(thehash + "-noscroll").prop("id", thehash.substr(1));
+    // $('a[href^="#"]').on("click", function (e) {
+    //     // debugger;
+    //     console.log("here!");
+    //     e.preventDefault();
+    //     $(document).off("scroll");
+
+    //     $("nav.navbar a").each(function () {
+    //         $(this).removeClass("active");
+    //     });
+    //     $(this).addClass("active");
+
+    //     var target = this.hash,
+    //         menu = target;
+    //     $target = $(target);
+    //     $("html, body")
+    //         .stop()
+    //         .animate(
+    //             {
+    //                 scrollTop: $target.offset().top + 2,
+    //             },
+    //             500,
+    //             "swing",
+    //             function () {
+    //                 window.location.hash = target;
+    //                 $(document).on("scroll", onScroll);
+    //             }
+    //         );
+    // });
 });
 
-// $(window).scroll(function (event) {
-//     debugger;
-//     var scroll = $(window).scrollTop();
-//     console.log("scrol val: ", scroll);
-// });
+function onScroll(event) {
+    // debugger;
+    var scrollPos = $(document).scrollTop();
+    // console.log("scrol val: ", scrollPos);
+    $("#header-nav a").each(function () {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top < scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $("#header-nav a").removeClass("active");
+            currLink.addClass("active");
+        } else {
+            currLink.removeClass("active");
+        }
+    });
+}
+
+// if (scroll > 50) {
+//     $("nav.navbar").addClass("fixed-top");
+//     // add padding top to show content behind navbar
+//     navbar_height = $("nav.navbar").height();
+//     document.body.style.paddingTop = navbar_height + "px";
+// } else {
+//     $("nav.navbar").removeClass("fixed-top");
+//     // remove padding top from body
+//     document.body.style.paddingTop = "0";
+// }

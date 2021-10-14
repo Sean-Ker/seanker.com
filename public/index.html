@@ -37,82 +37,75 @@
     </head>
 
     <body onorientationchange="windowResized">
-        <!--  -->
-        <div id="hero-section" style="height: 100%; width: 100%; position: relative; display: block">
-            <div id="home"></div>
-            <div id="hero-canvas" style="user-select: none"></div>
+        <!--~~~ Navbar ~~~-->
 
-            <!--~~~ Navbar ~~~-->
-            <nav
-                class="navbar navbar-expand-md fixed-top navbar-light bg-light"
-                style="
-                    background-color: rgba(255, 255, 255, 0.8) !important;
-                    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
-                "
-            >
-                <div class="container">
-                    <!-- Logo -->
-                    <a href="#home" class="navbar-brand">
-                        <img src="./assets/logo.svg" height="50px" alt="Logo" style="vertical-align: bottom" />
+        <nav
+            class="navbar navbar-expand-md fixed-top navbar-light bg-light"
+            style="background-color: rgba(255, 255, 255, 0.8) !important; box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2)"
+        >
+            <div class="container">
+                <!-- Logo -->
+                <a href="#home" class="navbar-brand">
+                    <img src="./assets/logo.svg" height="50px" alt="Logo" style="vertical-align: bottom" />
 
-                        <span id="brand-text"> S.K.</span>
-                    </a>
-                    <!-- Logo End -->
+                    <span id="brand-text"> S.K.</span>
+                </a>
+                <!-- Logo End -->
 
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbar-toggle"
-                        aria-controls="navbar-toggle"
-                        navbar-toggle
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="fa fa-bars"></span>
-                    </button>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbar-toggle"
+                    aria-controls="navbar-toggle"
+                    navbar-toggle
+                    aria-label="Toggle navigation"
+                >
+                    <span class="fa fa-bars"></span>
+                </button>
 
-                    <div class="collapse navbar-collapse d-md-flex justify-content-md-between" id="navbar-toggle">
-                        <div id="header-nav" class="navbar-nav">
-                            <a class="nav-link smooth-scroll active" href="#home">Home</a>
-                            <a class="nav-link smooth-scroll" href="#about">About</a>
-                            <a class="nav-link smooth-scroll" href="#skills">Skills</a>
-                            <a class="nav-link smooth-scroll" href="#skills">Projects</a>
-                            <a class="nav-link smooth-scroll" href="#contact">Contact</a>
-                        </div>
-                        <a class="my-btn-outline" target="_blank" href="/resume">Resume </a>
-                        <!-- <div class="align-items-end text-end d-flex"></div> -->
+                <div class="collapse navbar-collapse d-md-flex justify-content-md-between" id="navbar-toggle">
+                    <div id="header-nav" class="navbar-nav">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </div>
+                    <a id="resume-btn" class="my-btn-outline" target="_blank" href="/resume">Resume </a>
+                    <!-- <div class="align-items-end text-end d-flex"></div> -->
                 </div>
-            </nav>
+            </div>
+        </nav>
+        <!--~~~ Navbar End~~~-->
 
-            <!--~~~ Navbar End~~~-->
+        <!--~~~ Hero Section Start~~~-->
+        <div id="home" style="height: 100vh; width: 100%; position: relative; display: block">
+            <div id="hero-canvas" style="user-select: none"></div>
 
             <div class="card p-2">
                 <h3 class="mb-0 text-secondary">Hello!</h3>
-                <p class="fw-600 mb-2 mb-md-2 mt-2" style="font-family: Poppins; font-size: 3rem; line-height: 1.1em">
+                <p
+                    id="i-am"
+                    class="fw-bolder mb-2 mb-md-2 mt-2"
+                    style="font-family: Poppins; font-size: 3rem; line-height: 1.1em"
+                >
                     I'm Sean Kernitsman.
                 </p>
-                <p class="text-5 mb-2">based in Waterloo, Canada.</p>
+                <p class="fw-bold mb-2 text-secondary">based in Waterloo, Canada.</p>
 
                 <div class="d-flex justify-content-around">
-                    <a href="#about" class="btn btn-lg btn-primary btn-block rounded-pill smooth-scroll mt-2 text-white"
-                        >About Me</a
-                    >
-                    <a
-                        href="#contact"
-                        class="btn btn-lg btn-primary btn-block rounded-pill smooth-scroll mt-2 text-white"
-                        >Contact Me</a
-                    >
+                    <a href="#about" class="btn-call-to-action btn btn-lg smooth-scroll mt-2">About Me</a>
+                    <a href="#contact" class="btn-call-to-action btn btn-lg smooth-scroll mt-2">Contact Me</a>
                 </div>
             </div>
 
-            <div id="transition-block"></div>
             <div class="icon-scroll"></div>
         </div>
 
         <div id="about">
-            <br /><br /><br /><br /><br />
-            <div class="container">
+            <div id="transition-block"></div>
+            <div class="container pt-2">
                 <h1 class="mb-3" style="color: white">About Me</h1>
 
                 <div id="about_card" class="row p-2 mx-1 d-flex align-items-center g-xl-3">
@@ -127,26 +120,14 @@
                         quaerat rerum at architecto voluptatibus sunt placeat?
                     </div>
                 </div>
-                <br /><br /><br /><br /><br />
             </div>
         </div>
-        <div id="transition-block-out"></div>
+
         <div id="skills">
-            <br /><br /><br /><br /><br /><br /><br />
-
-            <div class="container">
+            <div id="transition-block-out"></div>
+            <div class="container pt-5 pb-1">
                 <h1>My Skills</h1>
-                <br /><br /><br />
                 <div class="d-flex align-items-center justify-content-center">
-                    <!-- <img
-                        id="skills_hive"
-                        data-tilt
-                        width="100%"
-                        src="./assets/skills.svg"
-                        alt="Skills bee hive icons"
-                        class="js-tilt p-2"
-                    /> -->
-
                     <div data-tilt id="skills_hive" style="position: relative" width="100%" height="auto">
                         <img
                             id="skeleton"
@@ -168,10 +149,19 @@
                     </div>
                 </div>
             </div>
-            <br /><br /><br /><br /><br /><br /><br />
-            <br /><br /><br /><br /><br /><br /><br />
-            <br /><br /><br /><br /><br /><br /><br />
+            <div id="waves-transition"></div>
         </div>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script> -->
+
+        <div id="projects">
+            <div class="container">
+                <h1 class="pt-5 pb-5">Projects</h1>
+            </div>
+        </div>
+
+        <div id="contact">
+            <div class="container">
+                <h1 class="pt-5 pb-5 text-white">Contact Me</h1>
+            </div>
+        </div>
     </body>
 </html>
