@@ -233,6 +233,8 @@
                                         id="contact-form"
                                         name="contact-form"
                                         class="needs-validation"
+                                        action="https://formsubmit.co/sean@seanker.com"
+                                        method="POST"
                                         novalidate
                                     >
                                         <!--Grid row-->
@@ -302,6 +304,7 @@
                                                         type="text"
                                                         class="form-control"
                                                         id="subject"
+                                                        name="_subject"
                                                         placeholder="Subject"
                                                         value="Doe"
                                                         required
@@ -342,10 +345,6 @@ sfasdf
                                                     Please enter a valid message
                                                 </div>
                                             </div>
-                                            <div
-                                                class="g-recaptcha"
-                                                data-sitekey="6LfPoxIdAAAAAMutrHJHcEmKFuaNYVoRdBXguIOL"
-                                            ></div>
                                         </div>
                                         <!--Grid row-->
 
@@ -356,12 +355,21 @@ sfasdf
                                                 class="
                                                     btn btn-call-to-action btn-lg btn-block
                                                     w-100
+                                                    g-recaptcha
                                                 "
+                                                data-callback="handleFormSubmit"
+                                                data-sitekey="6LdqRRMdAAAAACxFORRbynFL7-q2caum6yL0T1Y7"
                                                 style="border-radius: 0 0 0.5rem 0.5rem"
                                             >
                                                 Send
                                             </button>
                                         </div>
+                                        <input type="hidden" name="_captcha" value="false" />
+                                        <input
+                                            type="hidden"
+                                            name="_next"
+                                            value="assets/thanks.html"
+                                        />
                                     </form>
                                 </div>
                                 <!--Grid column-->

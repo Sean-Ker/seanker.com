@@ -43,18 +43,23 @@ $(function (e) {
         toastr.info("This screen is interactive, try pressing on it!", "Pssss... ");
     }, 30000);
 
-    // $("#contact-form").submit(function (e) {
-    //     debugger;
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     if (!this.checkValidity()) {
-    //     } else {
-    //         sendContactEmail();
-    //     }
+    $("#contact-form").submit(function (e) {
+        debugger;
+        if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+        } else {
+            // sendContactEmail();
+        }
+        $(this).addClass("was-validated");
+    });
 
-    //     $(this).addClass("was-validated");
-    // });
+    window.handleFormSubmit = handleFormSubmit;
 });
+
+const handleFormSubmit = token => {
+    $("#contact-form").submit();
+};
 
 function sendContactEmail() {
     let form = $("#contact-form").get(0);
