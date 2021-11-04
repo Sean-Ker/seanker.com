@@ -1,0 +1,29 @@
+{
+  "name": "seanker.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sean-Ker/seanker.com.git"
+  },
+  "keywords": [],
+  "author": "Sean Kernitsman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sean-Ker/seanker.com/issues"
+  },
+  "homepage": "https://github.com/Sean-Ker/seanker.com#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

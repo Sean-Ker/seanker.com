@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta
+            name="description"
+            content="A software and web developer based in Waterloo, Canada."
+        />
+        <meta name="author" content="Sean Kernitsman" />
+        <meta property="og:title" content="Sean Kernitsman" />
+        <meta property="og:site_name" content="Sean Kernitsman Portfolio Website" />
+        <meta property="og:url" content="https://www.seanker.com/" />
+        <meta
+            property="og:description"
+            content="A software and web developer based in Waterloo, Canada."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:image"
+            content="https://www.seanker.com/public/assets/website_mockup.png"
+        />
+
+        <title>Sean Kerntisman</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+            integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+            integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+
+    <body onorientationchange="windowResized">
+        <main>
+            <!--~~~ Navbar ~~~-->
+            <nav
+                class="navbar navbar-expand-md fixed-top navbar-light bg-light"
+                style="
+                    background-color: rgba(255, 255, 255, 0.8) !important;
+                    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+                "
+            >
+                <div class="container">
+                    <!-- Logo -->
+                    <a href="#home" class="navbar-brand">
+                        <img
+                            src="./assets/logo.svg"
+                            height="50px"
+                            alt="Logo"
+                            style="vertical-align: bottom"
+                        />
+
+                        <span id="brand-text"> S.K.</span>
+                    </a>
+                    <!-- Logo End -->
+
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbar-toggle"
+                        aria-controls="navbar-toggle"
+                        navbar-toggle
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="fa fa-bars"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse d-md-flex justify-content-md-between"
+                        id="navbar-toggle"
+                    >
+                        <div id="header-nav" class="navbar-nav">
+                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link" href="#skills">Skills</a>
+                            <a class="nav-link" href="#projects">Projects</a>
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </div>
+                        <a id="resume-btn" class="my-btn-outline" target="_blank" href="/resume"
+                            >Resume
+                        </a>
+                        <!-- <div class="align-items-end text-end d-flex"></div> -->
+                    </div>
+                </div>
+            </nav>
+            <!--~~~ Navbar End~~~-->
+
+            <!--~~~ Hero Section Start~~~-->
+            <div
+                id="home"
+                style="min-height: 100vh; width: 100%; position: relative; display: block"
+            >
+                <div id="hero-canvas" style="user-select: none"></div>
+
+                <div id="home-card" class="card p-2 my-card">
+                    <h3 class="mb-0 text-start dark-orange">Hello!</h3>
+                    <p
+                        id="i-am"
+                        class="fw-bolder mb-2 mb-md-2 mt-2 text-white"
+                        style="font-family: Poppins; font-size: 3rem; line-height: 1.1em"
+                    >
+                        I'm Sean Kernitsman.
+                    </p>
+                    <p class="fw-bold mb-2 dark-orange">based in Waterloo, Canada.</p>
+
+                    <div class="d-flex justify-content-around">
+                        <a href="#about" class="btn-call-to-action btn btn-lg smooth-scroll mt-2"
+                            >About Me</a
+                        >
+                        <a href="#contact" class="btn-call-to-action btn btn-lg smooth-scroll mt-2"
+                            >Contact Me</a
+                        >
+                    </div>
+                </div>
+
+                <div class="icon-scroll"></div>
+            </div>
+
+            <div id="about">
+                <!-- <div id="transition-block"></div> -->
+                <div class="sec-pad sec-background">
+                    <div class="container">
+                        <h1 id="about-header" style="color: white">About Me</h1>
+
+                        <div class="my-card mt-3 row p-2 mx-1 d-flex align-items-center g-xl-3">
+                            <div class="col-xl-6 mb-3 mb-xl-0">
+                                <img src="./assets/profile.svg" alt="Discord status profile" />
+                            </div>
+                            <div class="col-xl-6 lh-lg fs-6" style="color: rgb(230, 230, 230)">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+                                doloremque eveniet iste totam ex sed, fuga ut explicabo minima?
+                                Error porro voluptate minima quaerat rerum at architecto
+                                voluptatibus sunt placeat? Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Libero doloremque eveniet iste totam ex sed, fuga
+                                ut explicabo minima? Error porro voluptate minima quaerat rerum at
+                                architecto voluptatibus sunt placeat?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="transition-block-out"></div> -->
+            </div>
+
+            <div id="skills">
+                <div class="container pt-5 pb-1">
+                    <h1 class="my-5" id="skills-header">My Skills</h1>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div
+                            data-tilt
+                            id="skills_hive"
+                            style="position: relative"
+                            width="100%"
+                            height="auto"
+                        >
+                            <img
+                                id="skeleton"
+                                src="assets/skeleton.svg"
+                                style="position: absolute; left: 0px; top: 0px"
+                                width="100%"
+                                height="auto"
+                                data-depth="0.5"
+                            />
+
+                            <img
+                                id="techs"
+                                src="assets/techs.svg"
+                                style="position: absolute; left: 0px; top: 0px"
+                                width="100%"
+                                height="auto"
+                                data-depth="0.7"
+                            />
+                        </div>
+                    </div>
+                    <h3 class="mt-5">More Skills</h3>
+                    <p class="text-break mx-auto fs-6 lh-lg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+                        tenetur veritatis consequuntur doloribus excepturi? Ad iusto vero
+                        exercitationem, repellendus laudantium deserunt quisquam, debitis laborum,
+                        vitae animi eveniet similique doloribus rem!
+                    </p>
+                </div>
+                <!-- <div id="waves-transition"></div> -->
+            </div>
+
+            <div id="projects" class="sec-pad">
+                <div class="container">
+                    <h1 id="projects-header" class="py-5">Projects</h1>
+                </div>
+            </div>
+
+            <div id="contact" class="sec-pad sec-background">
+                <div class="container">
+                    <h1 id="contact-header" class="text-white mb-4">Contact Me</h1>
+                    <div class="my-card mt-5 p-3" style="transform: none">
+                        <div class="container d-flex justify-content-center">
+                            <div class="row">
+                                <p
+                                    class="text-center text-break mx-auto fs-6 lh-lg"
+                                    style="color: rgba(255, 255, 255, 0.9); width: 66%"
+                                >
+                                    Do you have any questions? Just want to say hi? Please do not
+                                    hesitate to contact me by submitting the form below and I will
+                                    get back to you as soon as possible.
+                                </p>
+
+                                <!--Grid column-->
+                                <div class="col-md-9 mb-md-0 mb-4">
+                                    <form
+                                        id="contact-form"
+                                        name="contact-form"
+                                        class="needs-validation"
+                                        novalidate
+                                    >
+                                        <!--Grid row-->
+                                        <div class="row g-3 mb-4">
+                                            <!--Grid column-->
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="fName"
+                                                        placeholder="First Name"
+                                                        required
+                                                    />
+                                                    <label for="fname">First Name</label>
+                                                    <div class="invalid-tooltip">
+                                                        Please enter a valid name
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Grid column-->
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="lName"
+                                                        placeholder="Last Name"
+                                                        required
+                                                    />
+                                                    <label for="lName">Last Name</label>
+                                                    <div class="invalid-tooltip">
+                                                        Please enter a valid last name
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6 d-flex">
+                                                <div class="input-group flex-nowrap">
+                                                    <span class="input-group-text" id="basic-addon1"
+                                                        >@</span
+                                                    >
+                                                    <div class="form-floating">
+                                                        <input
+                                                            type="email"
+                                                            class="form-control"
+                                                            id="email"
+                                                            placeholder="Email"
+                                                            style="width: auto"
+                                                            required
+                                                        />
+                                                        <label for="email">Email</label>
+                                                        <div class="invalid-tooltip">
+                                                            Please enter a valid email address
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="subject"
+                                                        placeholder="Subject"
+                                                        value="Doe"
+                                                        required
+                                                    />
+                                                    <label for="subject">Subject</label>
+                                                    <div class="invalid-tooltip">
+                                                        Please enter a valid subject
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--Grid row-->
+                                        <div class="row">
+                                            <!--Grid column-->
+                                            <div class="col">
+                                                <label
+                                                    for="message"
+                                                    style="color: rgba(255, 255, 255, 0.9)"
+                                                    >Your message (limit 1000 characters)</label
+                                                >
+                                                <textarea
+                                                    type="text"
+                                                    id="message"
+                                                    name="message"
+                                                    rows="4"
+                                                    class="form-control"
+                                                    maxlength="1000"
+                                                    required
+                                                >
+sfasdf
+</textarea
+                                                >
+                                                <div
+                                                    class="invalid-feedback"
+                                                    style="color: lightcoral"
+                                                >
+                                                    Please enter a valid message
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="g-recaptcha"
+                                                data-sitekey="your_site_key"
+                                            ></div>
+                                        </div>
+                                        <!--Grid row-->
+
+                                        <div class="text-center text-md-left">
+                                            <button
+                                                type="submit"
+                                                id="btn-contact-form"
+                                                class="
+                                                    btn btn-call-to-action btn-lg btn-block
+                                                    w-100
+                                                "
+                                                style="border-radius: 0 0 0.5rem 0.5rem"
+                                            >
+                                                Send
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-md-3 text-center">
+                                    <ul class="list-unstyled mb-0">
+                                        <li>
+                                            <a
+                                                class="text-black text-decoration-none"
+                                                href="https://www.google.com/maps/search/?api=1&query=N2L%203W5"
+                                                target="#blank"
+                                            >
+                                                <i class="fa fa-map-marker fa-2x"></i>
+                                                <p>Waterloo N2L0K3, ON Canada</p>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a
+                                                class="text-black text-decoration-none"
+                                                href="tel:+1-647-831-4626"
+                                            >
+                                                <i class="fa fa-phone mt-4 fa-2x"></i>
+                                                <p></p>
+                                                +1 (647) 831-4626
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a
+                                                class="text-black text-decoration-none"
+                                                href="mailto:sean@seanker.com"
+                                            >
+                                                <i class="fa fa-envelope mt-4 fa-2x"></i>
+                                                <p>sean@seanker.com</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="text-black text-decoration-none"
+                                                href="https://github.com/Sean-Ker/"
+                                                target="#blank"
+                                            >
+                                                <i class="fa fa-github-alt mt-4 fa-2x"></i>
+                                                <p>github.com/Sean-Ker</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23162.672107177397!2d-80.55245324530141!3d43.47449934769053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf4079a911353%3A0x87fe6cafb9e85242!2sWaterloo%2C%20ON%20N2L%203W5!5e0!3m2!1sen!2sca!4v1635958754922!5m2!1sen!2sca"
+                                    width="100%"
+                                    height="400px"
+                                    style="border: 0"
+                                    allowfullscreen="true"
+                                    loading="lazy"
+                                    zoom="1"
+                                    class="my-4"
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script type="text/javascript" src="./js/perlin.js"></script>
+        <script type="text/javascript" src="./js/sketch.js"></script>
+        <script type="text/javascript" src="./js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,204 @@
+// Navbar
+nav {
+    .nav-link {
+        font-family: Poppins !important;
+        border-bottom: 3px solid transparent;
+        &:hover {
+            color: $orange !important;
+            // border-bottom: 3px solid gray;
+        }
+    }
+    .nav-link.active {
+        border-bottom: 3px solid $orange;
+        color: $orange !important;
+    }
+
+    #brand-text {
+        font-family: Poppins;
+        font-style: italic;
+        font-size: 2rem;
+        color: $orange !important;
+    }
+    .my-btn-outline {
+        &:not(:hover) {
+            background-color: rgba(255, 255, 255, 0.5) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #header-nav {
+            text-align: center;
+        }
+        .my-btn-outline {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+}
+// Navbar End
+
+canvas {
+    display: block;
+    position: absolute !important;
+    cursor: pointer;
+    // z-index: -1;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1em;
+    padding: 2em !important;
+    position: absolute;
+    width: 560px;
+    top: 25%;
+    left: 10%;
+    @media (max-width: 768px) {
+        width: 80%;
+        left: 10%;
+    }
+    @media (max-width: 568px) {
+        width: 100%;
+        left: 0%;
+    }
+}
+
+//## Scroll Bar ##//
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+// Scroll Bar End
+
+//## Scroll Down call to action ##//
+.icon-scroll,
+.icon-scroll:before {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+}
+.icon-scroll {
+    width: 40px;
+    height: 70px;
+    margin-left: -20px;
+    top: 90%;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 2px $orange;
+    background: rgba($color: white, $alpha: 0.75);
+    border-radius: 25px;
+}
+.icon-scroll:before {
+    content: "";
+    width: 8px;
+    height: 11px;
+    background: $orange;
+    margin-left: -4px;
+    top: 8px;
+    border-radius: 4px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+@keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(46px);
+    }
+}
+//  Call to action end
+
+// Buttons
+@mixin btn-outline($theme: $orange) {
+    color: $theme;
+    border-radius: 5px;
+    border: 2px solid $theme;
+    background-color: white;
+    font-size: 1.2em;
+    padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+    box-shadow: 0 0 1px rgba($theme, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        background-color: $theme;
+        color: white;
+    }
+}
+
+.my-btn-outline {
+    @include btn-outline();
+}
+
+.my-btn-outline-dark {
+    @include btn-outline($theme: $orange-dark);
+}
+
+.btn-call-to-action {
+    border-radius: 0.5rem;
+    // background: linear-gradient(to right, $orange, $orange-dark);
+    background-color: $orange;
+    border: none;
+    color: #ffffff;
+
+    &:hover {
+        color: #ffffff;
+        background-color: $orange-dark;
+        // background: linear-gradient($orange, $orange);
+        text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+        box-shadow: 0px 5px 40px -10px $box-shadow;
+        -webkit-box-shadow: 0px 5px 40px -10px $box-shadow;
+        -moz-box-shadow: 0px 5px 40px -10px $box-shadow;
+        transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+}
+
+.sec-pad {
+    padding: 12rem 0;
+}
+
+.sec-background{
+    min-height: 110vh;
+    background-image:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='0' stroke-opacity='0' %3E%3Ccircle fill='%239B3417' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%239f3619' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23a4381a' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23a83a1c' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23ac3c1d' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23b13f1f' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23b54120' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23ba4322' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23be4523' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23c34725' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23c74927' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23cc4c28' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23d04e2a' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23d5502b' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23d9522d' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23de552f' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23e25730' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23E75932' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #9B3417;
+
+    // background: linear-gradient(to bottom, rgba($orange,0.8), rgba($orange-dark,0.8));
+    // background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+}
+// Buttons End
+
+.dark-orange{
+    color: $orange-dark;
+}
+
+.orange{
+    color:$orange;
+}
+
+.my-card {
+    background-color: rgba($orange-dark,0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid $orange-dark;
+    transition: all .2s ease-in-out;
+
+    &:hover{
+        @media (min-width: 768px) {
+        box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.4);
+        transform: scale(1.05);
+         }
+    }
+}
