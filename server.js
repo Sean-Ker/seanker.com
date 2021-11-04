@@ -38,6 +38,12 @@ app.get("/resume", (req, res) => {
     });
 });
 
+app.get("/thanks", (req, res) => {
+    thanks = path.join(public, "thanks");
+    console.log(thanks);
+    res.render(thanks);
+});
+
 app.get("*", function (req, res, next) {
     var err = new Error();
     err.status = 404;
