@@ -50,11 +50,11 @@ $(function (e) {
             e.stopPropagation();
         } else {
             debugger;
-            setTimeout(() => {
-                debugger;
-                window.location.replace("https://seanker.com/thanks");
-            }, 1000);
-            // window.location.replace("/thanks");
+            window.location.replace("https://seanker.com/thanks");
+            // setTimeout(() => {
+            //     debugger;
+            //     window.location.replace("https://seanker.com/thanks");
+            // }, 1000);
         }
         $(this).addClass("was-validated");
     });
