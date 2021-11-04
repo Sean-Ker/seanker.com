@@ -19,7 +19,7 @@ $(function (e) {
         frictionY: 0.1,
     });
 
-    setInterval(() => {
+    setTimeout(() => {
         var scrollPos = $(document).scrollTop();
         if (scrollPos > 50) {
             return;

@@ -235,6 +235,7 @@
                                         class="needs-validation"
                                         action="https://formsubmit.co/sean@seanker.com"
                                         method="POST"
+                                        enctype="multipart/form-data"
                                         novalidate
                                     >
                                         <!--Grid row-->
@@ -317,6 +318,22 @@
                                             </div>
                                         </div>
 
+                                        <div class="row text-white">
+                                            <div class="mb-3">
+                                                <label for="formFileMultiple" class="form-label"
+                                                    >Optional - Upload a file (Accepts Image, PDF,
+                                                    MS Office, Text File)</label
+                                                >
+                                                <input
+                                                    class="form-control"
+                                                    type="file"
+                                                    id="formFileMultiple"
+                                                    name="attachment"
+                                                    accept="image/*, *.docx, application/pdf, application/vnd.ms-excel, application/msword, application/vnd.ms-powerpoint, text/plain"
+                                                />
+                                                multiple />
+                                            </div>
+                                        </div>
                                         <!--Grid row-->
                                         <div class="row">
                                             <!--Grid column-->
@@ -368,7 +385,13 @@ sfasdf
                                         <input
                                             type="hidden"
                                             name="_next"
-                                            value="https://seanker.com/thanks"
+                                            value="https://seanker.com/thanks.html"
+                                        />
+                                        <input type="hidden" name="_template" value="table" />
+                                        <input
+                                            type="hidden"
+                                            name="_autoresponse"
+                                            value="Thanks a bunch for filling that out. It means a lot to me, just like you do!\nI would try to get back to you as soon as possible."
                                         />
                                     </form>
                                 </div>

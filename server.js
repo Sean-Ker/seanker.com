@@ -38,10 +38,10 @@ app.get("/resume", (req, res) => {
     });
 });
 
-app.get("/thanks", (req, res) => {
+app.get("/thanks.html", (req, res) => {
     thanks = path.join(public, "thanks");
     console.log(thanks);
-    res.render(thanks);
+    res.send(thanks);
 });
 
 app.get("*", function (req, res, next) {
