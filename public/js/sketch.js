@@ -97,8 +97,10 @@ class Branch {
     }
 
     moveNoise() {
-        this.speed.x += simplex.simplex3(this.x * accScl, this.y * accScl, millis() * timeScl) * scl;
-        this.speed.y += simplex.simplex3(this.y * accScl, this.x * accScl, millis() * timeScl) * scl;
+        this.speed.x +=
+            simplex.simplex3(this.x * accScl, this.y * accScl, millis() * timeScl) * scl;
+        this.speed.y +=
+            simplex.simplex3(this.y * accScl, this.x * accScl, millis() * timeScl) * scl;
         // this.speed.x +=
         this.x += this.speed.x;
         this.y += this.speed.y;
@@ -119,10 +121,49 @@ function createBranches(amount, x = mouseX, y = mouseY, drawLine = true) {
     }
 }
 
+function detectBrowser() {
+    if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
+        return "Opera";
+    } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+        return "Chrome";
+    } else if (navigator.userAgent.indexOf("Safari") != -1) {
+        return "Safari";
+    } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+        return "Firefox";
+    } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
+        return "IE"; //crap
+    } else {
+        return "Unknown";
+    }
+}
+
 function setup() {
     // frameRate(60);
     simplex.seed(random());
     clear();
+
+    debugger;
+    browser = detectBrowser();
+    if (browser == "Firefox") {
+        toastr.options = {
+            closeButton: true,
+            newestOnTop: true,
+            positionClass: "toast-top-center",
+            preventDuplicates: true,
+            onclick: null,
+            showDuration: "500",
+            hideDuration: "1000",
+            timeOut: "5000",
+            extendedTimeOut: "1000",
+            showEasing: "swing",
+            hideEasing: "linear",
+            showMethod: "fadeIn",
+            hideMethod: "fadeOut",
+        };
+
+        toastr.info("This screen is interactive, try pressing on it!", "Pssss... ");
+        return;
+    }
 
     let parent = $("#home")[0];
     // console.log(parent.offsetWidth, parent.offsetHeight);
@@ -161,7 +202,7 @@ function draw() {
         createBranches(particlesPerHold, mouseX, mouseY, !forex_mode);
     }
 
-    branches.forEach((branch) => {
+    branches.forEach(branch => {
         if (branch.visible) {
             branch.moveNoise();
             branch.draw();
