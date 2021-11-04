@@ -49,7 +49,12 @@ $(function (e) {
             e.preventDefault();
             e.stopPropagation();
         } else {
-            // sendContactEmail();
+            debugger;
+            setTimeout(() => {
+                debugger;
+                window.location.replace("https://seanker.com/thanks");
+            }, 1000);
+            // window.location.replace("/thanks");
         }
         $(this).addClass("was-validated");
     });

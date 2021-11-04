@@ -38,11 +38,17 @@ app.get("/resume", (req, res) => {
     });
 });
 
-// app.get("/thanks.html", (req, res) => {
+// app.post("/", function (req, res) {
+//     console.log(req.body);
 //     thanks = path.join(public, "thanks");
-//     console.log(thanks);
-//     res.render(thanks);
+//     res.render(thanks, { req: req.body });
 // });
+
+app.get("/thanks", (req, res) => {
+    thanks = path.join(public, "thanks");
+    console.log(thanks);
+    res.render(thanks);
+});
 
 app.get("*", function (req, res, next) {
     var err = new Error();
