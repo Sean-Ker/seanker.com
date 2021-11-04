@@ -43,17 +43,17 @@ $(function (e) {
         toastr.info("This screen is interactive, try pressing on it!", "Pssss... ");
     }, 30000);
 
-    $("#contact-form").submit(function (e) {
-        debugger;
-        e.preventDefault();
-        e.stopPropagation();
-        if (!this.checkValidity()) {
-        } else {
-            sendContactEmail();
-        }
+    // $("#contact-form").submit(function (e) {
+    //     debugger;
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     if (!this.checkValidity()) {
+    //     } else {
+    //         sendContactEmail();
+    //     }
 
-        $(this).addClass("was-validated");
-    });
+    //     $(this).addClass("was-validated");
+    // });
 });
 
 function sendContactEmail() {
