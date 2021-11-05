@@ -72,10 +72,10 @@ $(function (e) {
                     debugger;
                     // alert("thanks ofr the email!", data);
                     window.location.replace("/thanks");
+                    return false;
                 },
                 error: data => alert("Ajax failed: " + data["responseText"]),
             });
-            return false;
         }
         $(this).addClass("was-validated");
     });
