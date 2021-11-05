@@ -50,8 +50,32 @@ $(function (e) {
             e.stopPropagation();
         } else {
             debugger;
-            // $(location).prop("href", "https://seanker.com/thanks.html");
-            // window.location.replace("https://seanker.com/thanks");
+            let form = $("#contact-form").get(0);
+            fname = $("#fname").val();
+            lname = $("#lname").val();
+            email = $("#email").val();
+            subject = $("#subject").val();
+            message = $("#message").val();
+            console.log(fname, lname, email, subject, message);
+            $.ajax({
+                url: "https://formsubmit.co/ajax/sean@seanker.com",
+                method: "POST",
+                accepts: "application/json",
+                dataType: "json",
+                data: {
+                    name: fname + " " + lname,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                },
+                success: data => {
+                    debugger;
+                    alert("thanks ofr the email!", data);
+                    window.location.replace("https://seanker.com/thanks.html");
+                },
+                error: data => alert("Ajax failed: " + data["responseText"]),
+            });
+
             // setTimeout(() => {
             //     debugger;
             //     window.location.replace("https://seanker.com/thanks");
@@ -63,11 +87,16 @@ $(function (e) {
     window.handleFormSubmit = handleFormSubmit;
 });
 
+function formSentConfirmation() {
+    alert("thanks ofr the email!");
+}
+
 const handleFormSubmit = token => {
     $("#contact-form").submit();
 };
 
 function sendContactEmail() {
+    debugger;
     let form = $("#contact-form").get(0);
     fname = $("#fName").val();
     lname = $("#lName").val();
@@ -75,7 +104,20 @@ function sendContactEmail() {
     subject = $("#subject").val();
     message = $("#message").val();
     console.log(fname, lname, email, subject, message);
-    // form.reset();
+    $.ajax({
+        url: "https://formsubmit.co/ajax/your@email.com",
+        method: "POST",
+        accepts: "application/json",
+        dataType: "json",
+        data: {
+            name: fname + " " + lname,
+            email: email,
+            subject: subject,
+            message: message,
+        },
+        success: data => alert("thanks ofr the email!", data),
+        error: data => alert("Ajax failed: " + data["responseText"]),
+    });
 }
 
 function onScroll(event) {
