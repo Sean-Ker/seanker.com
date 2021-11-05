@@ -44,38 +44,36 @@ $(function (e) {
     }, 30000);
 
     $("#contact-form").submit(function (e) {
-        debugger;
         if (!this.checkValidity()) {
             e.preventDefault();
             e.stopPropagation();
         } else {
-            debugger;
-            let form = $("#contact-form").get(0);
-            fname = $("#fname").val();
-            lname = $("#lname").val();
-            email = $("#email").val();
-            subject = $("#subject").val();
-            message = $("#message").val();
-            console.log(fname, lname, email, subject, message);
-            $.ajax({
-                url: "https://formsubmit.co/ajax/sean@seanker.com",
-                method: "POST",
-                accepts: "application/json",
-                dataType: "json",
-                data: {
-                    name: fname + " " + lname,
-                    email: email,
-                    subject: subject,
-                    message: message,
-                },
-                success: data => {
-                    debugger;
-                    alert("thanks ofr the email!", data);
-                    window.location.replace("https://seanker.com/thanks.html");
-                },
-                error: data => alert("Ajax failed: " + data["responseText"]),
-            });
-
+            // debugger;
+            // let form = $("#contact-form").get(0);
+            // fname = $("#fname").val();
+            // lname = $("#lname").val();
+            // email = $("#email").val();
+            // subject = $("#subject").val();
+            // message = $("#message").val();
+            // console.log(fname, lname, email, subject, message);
+            // $.ajax({
+            //     url: "https://formsubmit.co/ajax/sean@seanker.com",
+            //     method: "POST",
+            //     accepts: "application/json",
+            //     dataType: "json",
+            //     data: {
+            //         name: fname + " " + lname,
+            //         email: email,
+            //         subject: subject,
+            //         message: message,
+            //     },
+            //     success: data => {
+            //         debugger;
+            //         // alert("thanks ofr the email!", data);
+            //         window.location.replace("http://localhost:3000/thanks");
+            //     },
+            //     error: data => alert("Ajax failed: " + data["responseText"]),
+            // });
             // setTimeout(() => {
             //     debugger;
             //     window.location.replace("https://seanker.com/thanks");
