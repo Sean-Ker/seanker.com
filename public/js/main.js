@@ -51,7 +51,7 @@ $(function (e) {
         } else {
             debugger;
             // $(location).prop("href", "https://seanker.com/thanks.html");
-            window.location.replace("https://seanker.com/thanks");
+            // window.location.replace("https://seanker.com/thanks");
             // setTimeout(() => {
             //     debugger;
             //     window.location.replace("https://seanker.com/thanks");

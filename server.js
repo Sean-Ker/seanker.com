@@ -4,7 +4,7 @@ var path = require("path");
 var favicon = require("serve-favicon");
 const app = express();
 
-const public = path.join(__dirname, "./public");
+const public = path.join(__dirname, "public");
 const resume_filepath = path.join(public, "assets", "Sean Kernitsman Resume.pdf");
 
 app.set("view engine", "ejs");
@@ -44,9 +44,9 @@ app.get("/resume", (req, res) => {
 //     res.render(thanks, { req: req.body });
 // });
 
-app.get("/thanks", (req, res) => {
-    res.render("thanks");
-});
+// app.get("/thanks", (req, res) => {
+//     res.render("thanks");
+// });
 
 app.get("*", function (req, res, next) {
     var err = new Error();
