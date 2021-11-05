@@ -74,8 +74,13 @@ $(function (e) {
                     window.location.replace("/thanks");
                     return false;
                 },
-                error: data => alert("Ajax failed: " + data["responseText"]),
+                error: data => {
+                    debugger;
+                    alert("Ajax failed: " + data["responseText"]);
+                    return false;
+                },
             });
+            return false;
         }
         $(this).addClass("was-validated");
     });
