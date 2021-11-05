@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 app.post("/thanks", function (req, res) {
     console.log(req.body);
     // res.redirect("/thank-you");
-    res.redirect(303, "/thanks");
+    res.redirect(302, "/thanks");
 });
 
 app.get("/thanks", (req, res) => {
