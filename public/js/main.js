@@ -57,26 +57,25 @@ $(function (e) {
             console.log(fname, lname, email, subject, message);
 
             debugger;
-            window.location.replace("/thanks");
+            $.ajax({
+                url: "https://formsubmit.co/ajax/sean@seanker.com",
+                method: "POST",
+                accepts: "application/json",
+                dataType: "json",
+                data: {
+                    name: fname + " " + lname,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                },
+                success: data => {
+                    debugger;
+                    // alert("thanks ofr the email!", data);
+                    window.location.replace("/thanks");
+                },
+                error: data => alert("Ajax failed: " + data["responseText"]),
+            });
             return false;
-            // $.ajax({
-            //     url: "https://formsubmit.co/ajax/sean@seanker.com",
-            //     method: "POST",
-            //     accepts: "application/json",
-            //     dataType: "json",
-            //     data: {
-            //         name: fname + " " + lname,
-            //         email: email,
-            //         subject: subject,
-            //         message: message,
-            //     },
-            //     success: data => {
-            //         debugger;
-            //         // alert("thanks ofr the email!", data);
-            //         window.location.replace("http://localhost:3000/thanks");
-            //     },
-            //     error: data => alert("Ajax failed: " + data["responseText"]),
-            // });
         }
         $(this).addClass("was-validated");
     });
