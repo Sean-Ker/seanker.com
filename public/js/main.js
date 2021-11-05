@@ -48,19 +48,22 @@ $(function (e) {
             e.preventDefault();
             e.stopPropagation();
         } else {
+            debugger;
             let form = $("#contact-form").get(0);
             fname = $("#fname").val();
             lname = $("#lname").val();
             email = $("#email").val();
             subject = $("#subject").val();
             message = $("#message").val();
+            // image = getBase64Image($("#formFile")[0].files[0]);
             console.log(fname, lname, email, subject, message);
 
-            debugger;
             $.ajax({
                 url: "https://formsubmit.co/ajax/sean@seanker.com",
                 method: "POST",
                 accepts: "application/json",
+                // processData: false,
+                // contentType: false,
                 dataType: "json",
                 data: {
                     name: fname + " " + lname,
@@ -87,6 +90,17 @@ $(function (e) {
 
     window.handleFormSubmit = handleFormSubmit;
 });
+
+function getBase64Image(imgElem) {
+    // imgElem must be on the same server otherwise a cross-origin error will be thrown "SECURITY_ERR: DOM Exception 18"
+    var canvas = document.createElement("canvas");
+    canvas.width = imgElem.clientWidth;
+    canvas.height = imgElem.clientHeight;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(imgElem, 0, 0);
+    var dataURL = canvas.toDataURL("image/png");
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
 function formSentConfirmation() {
     alert("thanks ofr the email!");
