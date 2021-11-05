@@ -44,9 +44,9 @@ app.get("/resume", (req, res) => {
 //     res.render(thanks, { req: req.body });
 // });
 
-// app.get("/thanks", (req, res) => {
-//     res.render("thanks");
-// });
+app.all("/thanks", (req, res) => {
+    res.render("thanks");
+});
 
 app.get("*", function (req, res, next) {
     var err = new Error();
