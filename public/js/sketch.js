@@ -142,26 +142,8 @@ function setup() {
     simplex.seed(random());
     clear();
 
-    debugger;
     browser = detectBrowser();
     if (browser == "Firefox") {
-        toastr.options = {
-            closeButton: true,
-            newestOnTop: true,
-            positionClass: "toast-top-center",
-            preventDuplicates: true,
-            onclick: null,
-            showDuration: "500",
-            hideDuration: "1000",
-            timeOut: "5000",
-            extendedTimeOut: "1000",
-            showEasing: "swing",
-            hideEasing: "linear",
-            showMethod: "fadeIn",
-            hideMethod: "fadeOut",
-        };
-
-        toastr.info("This screen is interactive, try pressing on it!", "Pssss... ");
         return;
     }
 
