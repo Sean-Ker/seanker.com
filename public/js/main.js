@@ -57,7 +57,7 @@ $(function (e) {
             console.log(fname, lname, email, subject, message);
 
             debugger;
-            window.location.replace("https://seanker.com/thanks");
+            window.location.replace("/thanks");
             return false;
             // $.ajax({
             //     url: "https://formsubmit.co/ajax/sean@seanker.com",
