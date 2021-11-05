@@ -7,6 +7,10 @@ const app = express();
 const public = path.join(__dirname, "public");
 const resume_filepath = path.join(public, "assets", "Sean Kernitsman Resume.pdf");
 
+var cors = require("cors");
+app.use(cors());
+app.options("*", cors());
+
 app.set("views", public);
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
@@ -14,29 +18,34 @@ app.set("view engine", "html");
 
 app.use(favicon(path.join(public, "assets", "favico.ico")));
 app.use(express.static(public));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/home", (req, res) => {
     res.redirect("/");
 });
 
-app.get("/", (req, res) => {
-    console.log("hello", __dirname);
-    res.render("index");
+app.get("/thanks", (req, res) => {
+    res.sendFile(path.join(public, "thanks.html"));
+    // res.render("thanks");
 });
-
-// app.get("/thank-you", function (req, res) {
-//     res.sendFile(path.join(public, "/thanks.html"));
-// });
 
 app.post("/thanks", function (req, res) {
     console.log(req.body);
     // res.redirect("/thank-you");
-    res.redirect(302, "/thanks");
+    res.redirect(301, "/thanks");
 });
 
-app.get("/thanks", (req, res) => {
-    res.sendFile(path.join(public, "thanks.html"));
-});
+// app.all("/thanks", function (req, res, next) {
+//     console.log(req.body);
+//     next();
+// });
+
+// app.use("/thanks", function (req, res, next) {
+//     console.log(req.body);
+//     res.redirect(301, "/thanks");
+//     next();
+// });
 
 // app.get("/robots.txt", (req, res) => {
 //     res.type("text/plain");

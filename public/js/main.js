@@ -48,14 +48,17 @@ $(function (e) {
             e.preventDefault();
             e.stopPropagation();
         } else {
-            // debugger;
-            // let form = $("#contact-form").get(0);
-            // fname = $("#fname").val();
-            // lname = $("#lname").val();
-            // email = $("#email").val();
-            // subject = $("#subject").val();
-            // message = $("#message").val();
-            // console.log(fname, lname, email, subject, message);
+            let form = $("#contact-form").get(0);
+            fname = $("#fname").val();
+            lname = $("#lname").val();
+            email = $("#email").val();
+            subject = $("#subject").val();
+            message = $("#message").val();
+            console.log(fname, lname, email, subject, message);
+
+            debugger;
+            window.location.replace("https://seanker.com/thanks");
+            return false;
             // $.ajax({
             //     url: "https://formsubmit.co/ajax/sean@seanker.com",
             //     method: "POST",
@@ -74,10 +77,6 @@ $(function (e) {
             //     },
             //     error: data => alert("Ajax failed: " + data["responseText"]),
             // });
-            // setTimeout(() => {
-            //     debugger;
-            //     window.location.replace("https://seanker.com/thanks");
-            // }, 1000);
         }
         $(this).addClass("was-validated");
     });
