@@ -142,24 +142,27 @@ function setup() {
     simplex.seed(random());
     clear();
 
-    browser = detectBrowser();
-    if (browser == "Firefox") {
-        return;
-    }
-
     let parent = $("#home")[0];
     // console.log(parent.offsetWidth, parent.offsetHeight);
     canvas = createCanvas(windowWidth, parent.offsetHeight);
     canvas.parent("hero-canvas");
+    canvas.style("display", "block");
     // console.log("canvas: ", canvas);
+
+    createBranches(particlesPerClick, width / 2, height / 2, (drawLine = !forex_mode));
 
     textSize(fontSize);
     strokeCap(SQUARE);
     colorMode(HSB);
-    blendMode(SCREEN);
     strokeWeight(0.6);
 
-    createBranches(particlesPerClick, width / 2, height / 2, (drawLine = !forex_mode));
+    browser = detectBrowser();
+    if (browser != "Firefox") {
+        blendMode(SCREEN);
+        // $("#defaultCanvas0").empty();
+        // $("#defaultCanvas0")[1].remove();
+        // blendMode(MULTIPLY);
+    }
 
     //createBranches(2000,0,0);
     //noStroke();
@@ -180,7 +183,7 @@ function draw() {
     fill(c, 100, 50);
 
     //clear();
-    if (mouseIsPressed) {
+    if (mouseIsPressed && window.innerWidth >= 768) {
         createBranches(particlesPerHold, mouseX, mouseY, !forex_mode);
     }
 
@@ -215,6 +218,9 @@ function keyPressed() {
 }
 
 function mousePressed() {
+    if (window.innerWidth < 768) {
+        return;
+    }
     clear();
     branches = [];
     currentIndex = 0;

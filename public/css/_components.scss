@@ -1,6 +1,7 @@
 // Navbar
 nav {
     .nav-link {
+        font-weight: 600;
         font-family: Poppins !important;
         border-bottom: 3px solid transparent;
         &:hover {
@@ -201,4 +202,15 @@ canvas {
         transform: scale(1.05);
          }
     }
+}
+
+.subheading {
+    display: block;
+    text-align: center !important;
+    font-size: 1.3rem !important;
+    font-weight: 500;
+    max-width: 60rem;
+    margin: auto;
+    line-height: 1.6 !important;
+    margin-bottom: 3rem;
 }

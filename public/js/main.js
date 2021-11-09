@@ -1,7 +1,7 @@
 $(function (e) {
     $("html").css("overflow-x", "hidden");
 
-    // $(document).on("scroll", onScroll);
+    $(document).on("scroll", onScroll);
 
     $("nav .nav-link").on("click", function (e) {
         // e.preventDefault();
@@ -19,29 +19,29 @@ $(function (e) {
         frictionY: 0.1,
     });
 
-    setTimeout(() => {
-        var scrollPos = $(document).scrollTop();
-        if (scrollPos > 50) {
-            return;
-        }
-        toastr.options = {
-            closeButton: true,
-            newestOnTop: true,
-            positionClass: "toast-top-center",
-            preventDuplicates: true,
-            onclick: null,
-            showDuration: "500",
-            hideDuration: "1000",
-            timeOut: "5000",
-            extendedTimeOut: "1000",
-            showEasing: "swing",
-            hideEasing: "linear",
-            showMethod: "fadeIn",
-            hideMethod: "fadeOut",
-        };
+    // setTimeout(() => {
+    //     var scrollPos = $(document).scrollTop();
+    //     if (scrollPos > 50) {
+    //         return;
+    //     }
+    //     toastr.options = {
+    //         closeButton: true,
+    //         newestOnTop: true,
+    //         positionClass: "toast-top-center",
+    //         preventDuplicates: true,
+    //         onclick: null,
+    //         showDuration: "500",
+    //         hideDuration: "1000",
+    //         timeOut: "5000",
+    //         extendedTimeOut: "1000",
+    //         showEasing: "swing",
+    //         hideEasing: "linear",
+    //         showMethod: "fadeIn",
+    //         hideMethod: "fadeOut",
+    //     };
 
-        toastr.info("This screen is interactive, try pressing on it!", "Pssss... ");
-    }, 30000);
+    //     toastr.info("This screen is interactive, try pressing on it!", "Pssss... ");
+    // }, 30000);
 
     $("#contact-form").submit(function (e) {
         if (!this.checkValidity()) {
@@ -88,23 +88,10 @@ $(function (e) {
         $(this).addClass("was-validated");
     });
 
+    // $("#outlierNotebook").load("./assets/outlier_detector_boston.html");
+
     window.handleFormSubmit = handleFormSubmit;
 });
-
-function getBase64Image(imgElem) {
-    // imgElem must be on the same server otherwise a cross-origin error will be thrown "SECURITY_ERR: DOM Exception 18"
-    var canvas = document.createElement("canvas");
-    canvas.width = imgElem.clientWidth;
-    canvas.height = imgElem.clientHeight;
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(imgElem, 0, 0);
-    var dataURL = canvas.toDataURL("image/png");
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
-
-function formSentConfirmation() {
-    alert("thanks ofr the email!");
-}
 
 const handleFormSubmit = token => {
     $("#contact-form").submit();
@@ -137,21 +124,21 @@ function sendContactEmail() {
 
 function onScroll(event) {
     // debugger;
-    var scrollPos = $(document).scrollTop();
-    // console.log("scrol val: ", scrollPos);
-    $("#header-nav a").each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (
-            refElement.position().top < scrollPos &&
-            refElement.position().top + refElement.height() > scrollPos
-        ) {
-            $("#header-nav a").removeClass("active");
-            currLink.addClass("active");
-        } else {
-            currLink.removeClass("active");
-        }
-    });
+    // var scrollPos = $(document).scrollTop();
+    // // console.log("scrol val: ", scrollPos);
+    // $("#header-nav a").each(function () {
+    //     var currLink = $(this);
+    //     var refElement = $(currLink.attr("href"));
+    //     if (
+    //         refElement.position().top < scrollPos &&
+    //         refElement.position().top + refElement.height() > scrollPos
+    //     ) {
+    //         $("#header-nav a").removeClass("active");
+    //         currLink.addClass("active");
+    //     } else {
+    //         currLink.removeClass("active");
+    //     }
+    // });
 }
 
 // if (scroll > 50) {
