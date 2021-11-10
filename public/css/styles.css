@@ -24,9 +24,9 @@ button {
 
 p {
   font-weight: 500;
-  max-width: 80rem;
+  max-width: 60rem;
   font-size: 1.2rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 a {
@@ -303,6 +303,14 @@ canvas {
 
 #home #home-card {
   background-color: rgba(231, 89, 50, 0.8);
+}
+
+@media (max-width: 576px) {
+  #home #home-card {
+    width: 95%;
+    left: 2.5%;
+    right: 2.5%;
+  }
 }
 
 #about {

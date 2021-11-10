@@ -11,6 +11,11 @@
 #home {
     background: white;
     #home-card{
+        @media (max-width: 576px) {
+            width:95%;
+            left:2.5%;
+            right:2.5%
+        }
         background-color: rgba($orange,0.8);
     }
     // .card {
