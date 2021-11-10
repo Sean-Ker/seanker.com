@@ -55,7 +55,13 @@ p{
     font-weight: 500;
     max-width: 80rem;
     font-size: 1.2rem;
+    color: rgb(255,255,255,0.9)
+}
 
+a{
+    // color: #1EB5EB;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {

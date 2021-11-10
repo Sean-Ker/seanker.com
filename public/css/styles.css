@@ -26,6 +26,12 @@ p {
   font-weight: 500;
   max-width: 80rem;
   font-size: 1.2rem;
+  color: white;
+}
+
+a {
+  font-weight: 600;
+  text-decoration: none;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
