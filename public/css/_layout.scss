@@ -10,22 +10,26 @@
 
 #home {
     background: white;
-    .card {
-        #i-am {
-            color: $orange;
+    #home-card{
+        @media (max-width: 576px) {
+            width:95%;
+            left:2.5%;
+            right:2.5%
         }
+        background-color: rgba($orange,0.8);
     }
+    // .card {
+    //     #i-am {
+    //         color: $orange;
+    //     }
+    // }
 }
 
 #about {
-    height: 100vh;
+    min-height: 100vh;
     // background: $orange;
     background: linear-gradient($orange, $orange-dark);
-    #about_card {
-        background-color: $orange-dark;
-        // border: 2px solid coral;
-        border-radius: 10px;
-    }
+
 }
 
 #transition-block {
@@ -54,10 +58,26 @@
 }
 
 #projects {
-    height: 100vh;
+    min-height: 100vh;
 }
 
-#contact {
+#contact2{
     height: 101vh;
-    background: linear-gradient($orange, $orange-dark);
+    background-image:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='0' stroke-opacity='0' %3E%3Ccircle fill='%239B3417' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%239f3619' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23a4381a' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23a83a1c' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23ac3c1d' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23b13f1f' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23b54120' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23ba4322' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23be4523' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23c34725' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23c74927' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23cc4c28' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23d04e2a' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23d5502b' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23d9522d' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23de552f' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23e25730' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23E75932' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: #9B3417;
+
+    // background: linear-gradient(to bottom, rgba($orange,0.8), rgba($orange-dark,0.8));
+    // background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+}
+
+#contact3 {
+    height: 101vh;
+    background-image: linear-gradient(to bottom, rgba($orange,0.9), rgba($orange-dark,0.9)), url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg);
+
+    // background: linear-gradient(to bottom, rgba($orange,0.8), rgba($orange-dark,0.8));
+    // background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
 }

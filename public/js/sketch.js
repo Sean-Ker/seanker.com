@@ -97,8 +97,10 @@ class Branch {
     }
 
     moveNoise() {
-        this.speed.x += simplex.simplex3(this.x * accScl, this.y * accScl, millis() * timeScl) * scl;
-        this.speed.y += simplex.simplex3(this.y * accScl, this.x * accScl, millis() * timeScl) * scl;
+        this.speed.x +=
+            simplex.simplex3(this.x * accScl, this.y * accScl, millis() * timeScl) * scl;
+        this.speed.y +=
+            simplex.simplex3(this.y * accScl, this.x * accScl, millis() * timeScl) * scl;
         // this.speed.x +=
         this.x += this.speed.x;
         this.y += this.speed.y;
@@ -119,6 +121,22 @@ function createBranches(amount, x = mouseX, y = mouseY, drawLine = true) {
     }
 }
 
+function detectBrowser() {
+    if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
+        return "Opera";
+    } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+        return "Chrome";
+    } else if (navigator.userAgent.indexOf("Safari") != -1) {
+        return "Safari";
+    } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+        return "Firefox";
+    } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
+        return "IE"; //crap
+    } else {
+        return "Unknown";
+    }
+}
+
 function setup() {
     // frameRate(60);
     simplex.seed(random());
@@ -128,15 +146,23 @@ function setup() {
     // console.log(parent.offsetWidth, parent.offsetHeight);
     canvas = createCanvas(windowWidth, parent.offsetHeight);
     canvas.parent("hero-canvas");
+    canvas.style("display", "block");
     // console.log("canvas: ", canvas);
+
+    createBranches(particlesPerClick, width / 2, height / 2, (drawLine = !forex_mode));
 
     textSize(fontSize);
     strokeCap(SQUARE);
     colorMode(HSB);
-    blendMode(SCREEN);
     strokeWeight(0.6);
 
-    createBranches(particlesPerClick, width / 2, height / 2, (drawLine = !forex_mode));
+    browser = detectBrowser();
+    if (browser != "Firefox") {
+        blendMode(SCREEN);
+        // $("#defaultCanvas0").empty();
+        // $("#defaultCanvas0")[1].remove();
+        // blendMode(MULTIPLY);
+    }
 
     //createBranches(2000,0,0);
     //noStroke();
@@ -157,11 +183,11 @@ function draw() {
     fill(c, 100, 50);
 
     //clear();
-    if (mouseIsPressed) {
+    if (mouseIsPressed && window.innerWidth >= 768) {
         createBranches(particlesPerHold, mouseX, mouseY, !forex_mode);
     }
 
-    branches.forEach((branch) => {
+    branches.forEach(branch => {
         if (branch.visible) {
             branch.moveNoise();
             branch.draw();
@@ -192,6 +218,9 @@ function keyPressed() {
 }
 
 function mousePressed() {
+    if (window.innerWidth < 768) {
+        return;
+    }
     clear();
     branches = [];
     currentIndex = 0;

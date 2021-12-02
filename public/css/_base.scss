@@ -1,11 +1,13 @@
-$orange-light: hsl(13, 71%, 66%);
+$orange-light: #e6856b;
 $orange: #e75932; // hsl(202, 75%, 44%)
-$orange-dark: hsl(13, 74%, 42%);
+$orange-dark: #9b3417;
+// $orange-dark: hsl(13, 74%, 42%);
+// $orange-darker: hsl(13, 74%, 35%);
 $box-shadow: rgba($orange, 0.57);
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Open Sans", "Roboto", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", "Open Sans", "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -43,16 +45,31 @@ button {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.6rem;
-    }
+// @media (max-width: 768px) {
+//     h1 {
+//         font-size: 2.6rem;
+//     }
+// }
+
+p{
+    font-weight: 500;
+    max-width: 60rem;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9)
+}
+
+a{
+    // color: #1EB5EB;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
     font-family: Poppins !important;
     line-height: 1.2;
     color: $orange-dark;
+    text-align: center;
+    font-weight: bold;
 }
 
 // p {

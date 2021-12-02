@@ -142,3 +142,5 @@ Webpack/*
 
 cover
 .vscode
+*.docx
+*.mp4

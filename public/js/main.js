@@ -1,7 +1,7 @@
 $(function (e) {
-    console.log("Init js.");
+    $("html").css("overflow-x", "hidden");
 
-    // $(document).on("scroll", onScroll);
+    $(document).on("scroll", onScroll);
 
     $("nav .nav-link").on("click", function (e) {
         // e.preventDefault();
@@ -18,53 +18,127 @@ $(function (e) {
         frictionX: 0.1,
         frictionY: 0.1,
     });
-    // }
-    // onScroll(e);
 
-    // $('a[href^="#"]').on("click", function (e) {
-    //     // debugger;
-    //     console.log("here!");
-    //     e.preventDefault();
-    //     $(document).off("scroll");
+    // setTimeout(() => {
+    //     var scrollPos = $(document).scrollTop();
+    //     if (scrollPos > 50) {
+    //         return;
+    //     }
+    //     toastr.options = {
+    //         closeButton: true,
+    //         newestOnTop: true,
+    //         positionClass: "toast-top-center",
+    //         preventDuplicates: true,
+    //         onclick: null,
+    //         showDuration: "500",
+    //         hideDuration: "1000",
+    //         timeOut: "5000",
+    //         extendedTimeOut: "1000",
+    //         showEasing: "swing",
+    //         hideEasing: "linear",
+    //         showMethod: "fadeIn",
+    //         hideMethod: "fadeOut",
+    //     };
 
-    //     $("nav.navbar a").each(function () {
-    //         $(this).removeClass("active");
-    //     });
-    //     $(this).addClass("active");
+    //     toastr.info("This screen is interactive, try pressing on it!", "Pssss... ");
+    // }, 30000);
 
-    //     var target = this.hash,
-    //         menu = target;
-    //     $target = $(target);
-    //     $("html, body")
-    //         .stop()
-    //         .animate(
-    //             {
-    //                 scrollTop: $target.offset().top + 2,
-    //             },
-    //             500,
-    //             "swing",
-    //             function () {
-    //                 window.location.hash = target;
-    //                 $(document).on("scroll", onScroll);
-    //             }
-    //         );
-    // });
+    $("#contact-form").submit(function (e) {
+        if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+        } else {
+            debugger;
+            let form = $("#contact-form").get(0);
+            fname = $("#fname").val();
+            lname = $("#lname").val();
+            email = $("#email").val();
+            subject = $("#subject").val();
+            message = $("#message").val();
+            // image = getBase64Image($("#formFile")[0].files[0]);
+            console.log(fname, lname, email, subject, message);
+
+            $.ajax({
+                url: "https://formsubmit.co/ajax/sean@seanker.com",
+                method: "POST",
+                accepts: "application/json",
+                // processData: false,
+                // contentType: false,
+                dataType: "json",
+                data: {
+                    name: fname + " " + lname,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                },
+                success: data => {
+                    debugger;
+                    // alert("thanks ofr the email!", data);
+                    window.location.replace("/thanks");
+                    return false;
+                },
+                error: data => {
+                    debugger;
+                    alert("Ajax failed: " + data["responseText"]);
+                    return false;
+                },
+            });
+            return false;
+        }
+        $(this).addClass("was-validated");
+    });
+
+    // $("#outlierNotebook").load("./assets/outlier_detector_boston.html");
+
+    window.handleFormSubmit = handleFormSubmit;
 });
+
+const handleFormSubmit = token => {
+    $("#contact-form").submit();
+};
+
+function sendContactEmail() {
+    debugger;
+    let form = $("#contact-form").get(0);
+    fname = $("#fName").val();
+    lname = $("#lName").val();
+    email = $("#email").val();
+    subject = $("#subject").val();
+    message = $("#message").val();
+    console.log(fname, lname, email, subject, message);
+    $.ajax({
+        url: "https://formsubmit.co/ajax/your@email.com",
+        method: "POST",
+        accepts: "application/json",
+        dataType: "json",
+        data: {
+            name: fname + " " + lname,
+            email: email,
+            subject: subject,
+            message: message,
+        },
+        success: data => alert("thanks ofr the email!", data),
+        error: data => alert("Ajax failed: " + data["responseText"]),
+    });
+}
 
 function onScroll(event) {
     // debugger;
-    var scrollPos = $(document).scrollTop();
-    // console.log("scrol val: ", scrollPos);
-    $("#header-nav a").each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-        if (refElement.position().top < scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            $("#header-nav a").removeClass("active");
-            currLink.addClass("active");
-        } else {
-            currLink.removeClass("active");
-        }
-    });
+    // var scrollPos = $(document).scrollTop();
+    // // console.log("scrol val: ", scrollPos);
+    // $("#header-nav a").each(function () {
+    //     var currLink = $(this);
+    //     var refElement = $(currLink.attr("href"));
+    //     if (
+    //         refElement.position().top < scrollPos &&
+    //         refElement.position().top + refElement.height() > scrollPos
+    //     ) {
+    //         $("#header-nav a").removeClass("active");
+    //         currLink.addClass("active");
+    //     } else {
+    //         currLink.removeClass("active");
+    //     }
+    // });
 }
 
 // if (scroll > 50) {
